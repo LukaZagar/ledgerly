@@ -1,0 +1,6 @@
+# Keep line endings stable across platforms; golden-file tests depend on it.
+* text=auto eol=lf
+*.csv text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.go text eol=lf
