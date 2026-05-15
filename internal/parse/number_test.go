@@ -17,6 +17,8 @@ func TestParseAmountAuto(t *testing.T) {
 		{"plain dot decimal", "1234.56", 123456},
 		{"plain comma decimal", "1234,56", 123456},
 		{"negative comma", "-12,50", -1250},
+		{"trailing minus", "1.234,56-", -123456},
+		{"trailing minus plain", "12,50-", -1250},
 		{"explicit plus", "+99,99", 9999},
 		{"leading zero cents", "0,07", 7},
 		{"one fraction digit", "1,5", 150},

@@ -34,6 +34,18 @@ func ParseAmount(s string, dec DecimalSeparator) (model.Money, error) {
 	}
 
 	neg := false
+	// Some banks (e.g. Sparkasse) put the sign at the end of the field:
+	// "1.234,56-". Check both ends.
+	switch s[len(s)-1] {
+	case '-':
+		neg = true
+		s = s[:len(s)-1]
+	case '+':
+		s = s[:len(s)-1]
+	}
+	if s == "" {
+		return 0, fmt.Errorf("parse amount %q: sign only", raw)
+	}
 	switch s[0] {
 	case '+':
 		s = s[1:]
