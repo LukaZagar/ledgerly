@@ -20,28 +20,57 @@ type Table struct {
 // candidateDelimiters are tried, most-specific first, when auto-detecting.
 var candidateDelimiters = []rune{';', '\t', ',', '|'}
 
+// ReadOptions tunes how a CSV is read. The zero value auto-detects the
+// delimiter and skips nothing, which is what ReadCSV uses.
+type ReadOptions struct {
+	// Delimiter is the field separator; 0 means auto-detect.
+	Delimiter rune
+	// SkipRows drops this many decoded lines before the header is read, for
+	// banks that print a preamble above the actual table.
+	SkipRows int
+}
+
 // ReadCSV reads a CSV from r, auto-detecting both the byte encoding and the
 // field delimiter. German bank exports are frequently semicolon-separated and
 // encoded as Windows-1252 with a UTF-8 BOM, so we cannot assume the Go
 // defaults.
 func ReadCSV(r io.Reader) (*Table, error) {
-	raw, err := io.ReadAll(r)
-	if err != nil {
-		return nil, err
-	}
-	text := decodeToUTF8(raw)
-	delim := detectDelimiter(text)
-	return parseCSV(text, delim)
+	return ReadCSVOpts(r, ReadOptions{})
 }
 
 // ReadCSVWithDelimiter is like ReadCSV but uses the supplied delimiter instead
 // of guessing it.
 func ReadCSVWithDelimiter(r io.Reader, delim rune) (*Table, error) {
+	return ReadCSVOpts(r, ReadOptions{Delimiter: delim})
+}
+
+// ReadCSVOpts reads a CSV honouring the given options.
+func ReadCSVOpts(r io.Reader, opts ReadOptions) (*Table, error) {
 	raw, err := io.ReadAll(r)
 	if err != nil {
 		return nil, err
 	}
-	return parseCSV(decodeToUTF8(raw), delim)
+	text := decodeToUTF8(raw)
+	if opts.SkipRows > 0 {
+		text = dropLines(text, opts.SkipRows)
+	}
+	delim := opts.Delimiter
+	if delim == 0 {
+		delim = detectDelimiter(text)
+	}
+	return parseCSV(text, delim)
+}
+
+// dropLines removes the first n lines from text.
+func dropLines(text string, n int) string {
+	for ; n > 0; n-- {
+		if i := strings.IndexByte(text, '\n'); i >= 0 {
+			text = text[i+1:]
+		} else {
+			return ""
+		}
+	}
+	return text
 }
 
 func parseCSV(text string, delim rune) (*Table, error) {
