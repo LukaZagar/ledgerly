@@ -62,13 +62,42 @@ func (p *Profile) mapRow(row []string, idx columnIndex, account string) (model.T
 		}
 	}
 
-	amount, err := parse.ParseAmount(get(row, idx, p.Columns.Amount), p.decimalSeparator())
+	amount, err := p.resolveAmount(row, idx)
 	if err != nil {
 		return model.Transaction{}, err
 	}
 	tx.Amount = amount
 
 	return tx, nil
+}
+
+// resolveAmount computes the signed amount, either from a single signed column
+// or from a debit/credit pair. With a pair, the debit side is treated as an
+// outflow (made negative) and the credit side as an inflow; exactly one is
+// normally populated per row.
+func (p *Profile) resolveAmount(row []string, idx columnIndex) (model.Money, error) {
+	dec := p.decimalSeparator()
+
+	if p.Columns.Amount != "" {
+		return parse.ParseAmount(get(row, idx, p.Columns.Amount), dec)
+	}
+
+	var total model.Money
+	if raw := get(row, idx, p.Columns.Debit); raw != "" {
+		debit, err := parse.ParseAmount(raw, dec)
+		if err != nil {
+			return 0, err
+		}
+		total -= debit.Abs()
+	}
+	if raw := get(row, idx, p.Columns.Credit); raw != "" {
+		credit, err := parse.ParseAmount(raw, dec)
+		if err != nil {
+			return 0, err
+		}
+		total += credit.Abs()
+	}
+	return total, nil
 }
 
 // columnIndex maps a header column name to its position in a row.
