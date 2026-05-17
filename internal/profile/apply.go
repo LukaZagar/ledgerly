@@ -106,7 +106,9 @@ type columnIndex map[string]int
 func buildIndex(header []string) columnIndex {
 	idx := make(columnIndex, len(header))
 	for i, h := range header {
-		idx[h] = i
+		// Trim so headers like "Betrag " or a column left dirty by a stray
+		// BOM still match the profile's clean column names.
+		idx[strings.TrimSpace(h)] = i
 	}
 	return idx
 }
@@ -119,7 +121,7 @@ func (p *Profile) checkColumns(idx columnIndex) error {
 		required = append(required, p.Columns.Amount)
 	}
 	for _, col := range required {
-		if _, ok := idx[col]; !ok {
+		if _, ok := idx[strings.TrimSpace(col)]; !ok {
 			return fmt.Errorf("profile %q: column %q not found in header", p.Name, col)
 		}
 	}
@@ -129,6 +131,7 @@ func (p *Profile) checkColumns(idx columnIndex) error {
 // get returns the trimmed value of the named column for a row, or "" when the
 // column is unmapped or missing.
 func get(row []string, idx columnIndex, col string) string {
+	col = strings.TrimSpace(col)
 	if col == "" {
 		return ""
 	}
