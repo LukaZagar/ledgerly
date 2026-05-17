@@ -1,0 +1,16 @@
+name: ING
+delimiter: ";"
+decimal: comma
+currency: EUR
+date_layouts:
+  - "02.01.2006"
+signature:
+  - Buchung
+  - "Auftraggeber/Empfänger"
+  - Verwendungszweck
+columns:
+  date: Buchung
+  value_date: Valuta
+  amount: Betrag
+  payee: "Auftraggeber/Empfänger"
+  purpose: Verwendungszweck
