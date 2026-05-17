@@ -1,0 +1,32 @@
+[
+  {
+    "date": "2026-01-02",
+    "value_date": "2026-01-02",
+    "amount": -4312,
+    "currency": "EUR",
+    "payee": "REWE SAGT DANKE",
+    "purpose": "Einkauf Lebensmittel",
+    "account": "ING-Giro",
+    "category": ""
+  },
+  {
+    "date": "2026-01-05",
+    "value_date": "2026-01-05",
+    "amount": 245000,
+    "currency": "EUR",
+    "payee": "Gehalt Mustermann GmbH",
+    "purpose": "Lohn/Gehalt Januar",
+    "account": "ING-Giro",
+    "category": ""
+  },
+  {
+    "date": "2026-01-07",
+    "value_date": "2026-01-08",
+    "amount": -1299,
+    "currency": "EUR",
+    "payee": "NETFLIX.COM",
+    "purpose": "Abo Januar",
+    "account": "ING-Giro",
+    "category": ""
+  }
+]

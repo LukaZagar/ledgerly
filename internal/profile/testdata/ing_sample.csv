@@ -1,0 +1,4 @@
+Buchung;Valuta;Auftraggeber/Empfänger;Buchungstext;Verwendungszweck;Betrag;Währung
+02.01.2026;02.01.2026;REWE SAGT DANKE;Lastschrift;Einkauf Lebensmittel;-43,12;EUR
+05.01.2026;05.01.2026;Gehalt Mustermann GmbH;Gutschrift;Lohn/Gehalt Januar;2.450,00;EUR
+07.01.2026;08.01.2026;NETFLIX.COM;Lastschrift;Abo Januar;-12,99;EUR
