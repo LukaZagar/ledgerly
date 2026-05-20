@@ -1,0 +1,76 @@
+# Default categorization rules, evaluated top to bottom — the first match wins.
+# Put the more specific patterns above the broad ones (e.g. "Amazon Prime"
+# before a bare "Amazon"). Categories are free text; these mirror the built-in
+# buckets in internal/model.
+rules:
+  # --- Income ---
+  - { match: "Gehalt", category: "Income" }
+  - { match: "Lohn", category: "Income" }
+  - { regex: "lohn|gehalt|bezuege", field: purpose, category: "Income" }
+
+  # --- Subscriptions (before broad merchants like Amazon) ---
+  - { regex: "amazon.*(prime|video)", category: "Subscriptions" }
+  - { match: "Netflix", category: "Subscriptions" }
+  - { match: "Spotify", category: "Subscriptions" }
+  - { match: "Disney", category: "Subscriptions" }
+  - { match: "YouTube", category: "Subscriptions" }
+  - { match: "Apple.com/bill", category: "Subscriptions" }
+  - { match: "DAZN", category: "Subscriptions" }
+  - { match: "Sky Deutschland", category: "Subscriptions" }
+
+  # --- Groceries ---
+  - { match: "REWE", category: "Groceries" }
+  - { match: "EDEKA", category: "Groceries" }
+  - { match: "ALDI", category: "Groceries" }
+  - { match: "LIDL", category: "Groceries" }
+  - { match: "Kaufland", category: "Groceries" }
+  - { match: "PENNY", category: "Groceries" }
+  - { match: "Netto Marken", category: "Groceries" }
+
+  # --- Dining out ---
+  - { match: "McDonald", category: "Dining Out" }
+  - { match: "Burger King", category: "Dining Out" }
+  - { match: "Lieferando", category: "Dining Out" }
+  - { match: "Starbucks", category: "Dining Out" }
+  - { match: "Restaurant", category: "Dining Out" }
+
+  # --- Transport / fuel ---
+  - { match: "Shell", category: "Transport" }
+  - { match: "Aral", category: "Transport" }
+  - { match: "Esso", category: "Transport" }
+  - { regex: "deutsche bahn|db vertrieb|\\bbahn\\b", category: "Transport" }
+  - { match: "Uber", category: "Transport" }
+  - { regex: "tankstelle", category: "Transport" }
+
+  # --- Health / drugstore ---
+  - { regex: "\\bdm\\b|dm-drogerie", category: "Health" }
+  - { match: "Rossmann", category: "Health" }
+  - { match: "Apotheke", category: "Health" }
+
+  # --- Utilities / telecom ---
+  - { match: "Stadtwerke", category: "Utilities" }
+  - { match: "Vodafone", category: "Utilities" }
+  - { match: "Telekom", category: "Utilities" }
+  - { regex: "\\bo2\\b|telefonica", category: "Utilities" }
+  - { regex: "e\\.?on|strom", category: "Utilities" }
+
+  # --- Insurance ---
+  - { match: "Versicherung", category: "Insurance" }
+  - { match: "Allianz", category: "Insurance" }
+  - { match: "HUK", category: "Insurance" }
+
+  # --- Rent ---
+  - { match: "Miete", category: "Rent" }
+
+  # --- Fees ---
+  - { regex: "kontofuehrung|entgelt|gebuehr", category: "Fees" }
+
+  # --- Cash ---
+  - { regex: "bargeld|geldautomat|auszahlung|\\batm\\b", category: "Cash" }
+
+  # --- Shopping (broad merchants last) ---
+  - { match: "Amazon", category: "Shopping" }
+  - { match: "Zalando", category: "Shopping" }
+  - { match: "IKEA", category: "Shopping" }
+  - { match: "MediaMarkt", category: "Shopping" }
+  - { match: "Saturn", category: "Shopping" }
