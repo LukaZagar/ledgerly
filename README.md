@@ -7,7 +7,8 @@ them into a budgeting tool, you drown in that mess.
 
 Ledgerly turns those wildly different bank CSVs into **one clean, unified, and
 automatically categorized** transaction list — as a single, dependency-light
-command-line binary.
+command-line binary. No bank login, no cloud: it only ever touches the files
+you hand it.
 
 > Status: early work in progress. More below as the pieces land.
 
