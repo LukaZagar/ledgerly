@@ -1,0 +1,5 @@
+date,value_date,amount,currency,payee,purpose,account,category,reference
+2026-01-02,,-43.12,EUR,REWE SAGT DANKE,Einkauf Lebensmittel,ING-Giro,Groceries,
+2026-01-05,,2450.00,EUR,Mustermann GmbH,Gehalt Januar,ING-Giro,Income,
+2026-01-07,2026-01-08,-12.99,EUR,NETFLIX.COM,Abo Januar,ING-Giro,Subscriptions,NETFLIX-2026-01
+2026-01-09,,-8.99,EUR,Unbekannt,,ING-Giro,Uncategorized,
