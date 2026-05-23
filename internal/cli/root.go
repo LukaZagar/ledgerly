@@ -19,6 +19,7 @@ func NewRootCmd(version string) *cobra.Command {
 
 	root.AddCommand(newConvertCmd())
 	root.AddCommand(newProfilesCmd())
+	root.AddCommand(newSummaryCmd())
 	return root
 }
 
