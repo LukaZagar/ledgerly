@@ -7,6 +7,7 @@ import (
 
 	"github.com/SciTee/ledgerly/internal/export"
 	"github.com/SciTee/ledgerly/internal/model"
+	"github.com/SciTee/ledgerly/internal/parse"
 	"github.com/SciTee/ledgerly/internal/profile"
 	"github.com/spf13/cobra"
 )
@@ -14,6 +15,7 @@ import (
 func newConvertCmd() *cobra.Command {
 	var (
 		profileName string
+		autoDetect  bool
 		account     string
 		format      string
 		outPath     string
@@ -33,7 +35,7 @@ func newConvertCmd() *cobra.Command {
 				return fmt.Errorf("unknown format %q (use csv or json)", format)
 			}
 
-			p, err := profile.Resolve(profileName)
+			p, err := selectProfile(profileName, autoDetect, args[0])
 			if err != nil {
 				return err
 			}
@@ -68,14 +70,37 @@ func newConvertCmd() *cobra.Command {
 	}
 
 	cmd.Flags().StringVarP(&profileName, "profile", "p", "", "bank profile: a built-in name or a path to a YAML file")
+	cmd.Flags().BoolVar(&autoDetect, "auto-detect", false, "auto-detect the profile from the CSV header")
 	cmd.Flags().StringVarP(&account, "account", "a", "", "account label for the rows (default: input file name)")
 	cmd.Flags().StringVarP(&format, "format", "f", "csv", "output format: csv or json")
 	cmd.Flags().StringVarP(&outPath, "out", "o", "", "output file (default: stdout)")
 	cmd.Flags().StringVarP(&rulesFile, "rules", "r", "", "user categorization rules file (stacked on top of defaults)")
 	cmd.Flags().BoolVar(&noCat, "no-categorize", false, "skip categorization")
-	cmd.MarkFlagRequired("profile")
 
 	return cmd
+}
+
+// selectProfile resolves which profile to use: an explicit --profile, or
+// --auto-detect which reads the header of the first input file and matches it
+// against the built-in signatures.
+func selectProfile(name string, autoDetect bool, firstInput string) (*profile.Profile, error) {
+	switch {
+	case autoDetect:
+		f, err := os.Open(firstInput)
+		if err != nil {
+			return nil, err
+		}
+		defer f.Close()
+		tab, err := parse.ReadCSV(f)
+		if err != nil {
+			return nil, err
+		}
+		return profile.Detect(tab.Header)
+	case name != "":
+		return profile.Resolve(name)
+	default:
+		return nil, fmt.Errorf("a profile is required: pass --profile or --auto-detect")
+	}
 }
 
 func write(w io.Writer, format string, txs []model.Transaction) error {
