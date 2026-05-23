@@ -50,7 +50,7 @@ func newConvertCmd() *cobra.Command {
 				return err
 			}
 
-			out, closeOut, err := openOutput(outPath)
+			out, closeOut, err := openOutput(outPath, cmd.OutOrStdout())
 			if err != nil {
 				return err
 			}
@@ -111,10 +111,11 @@ func write(w io.Writer, format string, txs []model.Transaction) error {
 }
 
 // openOutput returns the writer for the chosen output path. When the path is
-// empty it writes to stdout and the returned close func is a no-op.
-func openOutput(path string) (io.Writer, func(), error) {
+// empty it falls back to def (normally stdout) and the returned close func is a
+// no-op.
+func openOutput(path string, def io.Writer) (io.Writer, func(), error) {
 	if path == "" {
-		return os.Stdout, func() {}, nil
+		return def, func() {}, nil
 	}
 	f, err := os.Create(path)
 	if err != nil {
