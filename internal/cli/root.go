@@ -18,6 +18,7 @@ func NewRootCmd(version string) *cobra.Command {
 	root.SetVersionTemplate("ledgerly {{.Version}}\n")
 
 	root.AddCommand(newConvertCmd())
+	root.AddCommand(newProfilesCmd())
 	return root
 }
 
