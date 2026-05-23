@@ -25,7 +25,7 @@ func TestApplyINGProfile(t *testing.T) {
 	}
 	defer f.Close()
 
-	tab, err := parse.ReadCSVOpts(f, p.readOptions())
+	tab, err := parse.ReadCSVOpts(f, p.ReadOptions())
 	if err != nil {
 		t.Fatalf("read csv: %v", err)
 	}

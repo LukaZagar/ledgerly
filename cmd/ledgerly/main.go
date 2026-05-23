@@ -1,11 +1,17 @@
 // Command ledgerly unifies bank CSV exports into one clean, categorized format.
 package main
 
-import "fmt"
+import (
+	"os"
 
-// version is overridden at build time via -ldflags.
+	"github.com/SciTee/ledgerly/internal/cli"
+)
+
+// version is overridden at build time via -ldflags "-X main.version=...".
 var version = "dev"
 
 func main() {
-	fmt.Printf("ledgerly %s\n", version)
+	if err := cli.Execute(version); err != nil {
+		os.Exit(1)
+	}
 }

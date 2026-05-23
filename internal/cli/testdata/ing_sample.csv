@@ -1,0 +1,5 @@
+Buchung;Valuta;Auftraggeber/Empfänger;Buchungstext;Verwendungszweck;Betrag;Währung
+04.02.2026;04.02.2026;EDEKA Suedwest;Lastschrift;Wocheneinkauf;-58,90;EUR
+05.02.2026;05.02.2026;Mustermann GmbH;Gutschrift;Gehalt Februar;2.450,00;EUR
+06.02.2026;06.02.2026;SPOTIFY;Lastschrift;Premium Abo;-9,99;EUR
+06.02.2026;06.02.2026;Shell Station 4711;Lastschrift;Tanken;-62,30;EUR
