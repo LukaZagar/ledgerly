@@ -54,7 +54,7 @@ func TestDedupRemovesOverlap(t *testing.T) {
 		mk(8, 245000, "Arbeitgeber", "Gehalt", "giro"),
 	}
 	exportB := []model.Transaction{
-		mk(7, -1299, "Netflix", "Abo Januar", "giro"), // duplicate of above
+		mk(7, -1299, "Netflix", "Abo Januar", "giro"),  // duplicate of above
 		mk(8, 245000, "Arbeitgeber", "Gehalt", "giro"), // duplicate of above
 		mk(9, -4200, "Shell", "Tanken", "giro"),
 	}

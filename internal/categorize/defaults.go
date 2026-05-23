@@ -1,8 +1,8 @@
 package categorize
 
 import (
-	_ "embed"
 	"bytes"
+	_ "embed"
 )
 
 //go:embed rules.yaml

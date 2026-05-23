@@ -38,15 +38,15 @@ func (m Money) Abs() Money {
 // optional fields (ValueDate, Reference) so partially-populated bank exports
 // still map cleanly.
 type Transaction struct {
-	Date      Date   `json:"date"`                // booking date
+	Date      Date   `json:"date"`                 // booking date
 	ValueDate Date   `json:"value_date,omitempty"` // Wertstellung, optional
-	Amount    Money  `json:"amount"`              // signed, minor units
-	Currency  string `json:"currency"`            // ISO 4217, e.g. "EUR"
-	Payee     string `json:"payee"`               // counterparty
-	Purpose   string `json:"purpose"`             // description / Verwendungszweck
-	Account   string `json:"account"`             // source account label
-	Category  string `json:"category"`            // assigned category
-	Reference string `json:"reference,omitempty"` // bank/end-to-end reference
+	Amount    Money  `json:"amount"`               // signed, minor units
+	Currency  string `json:"currency"`             // ISO 4217, e.g. "EUR"
+	Payee     string `json:"payee"`                // counterparty
+	Purpose   string `json:"purpose"`              // description / Verwendungszweck
+	Account   string `json:"account"`              // source account label
+	Category  string `json:"category"`             // assigned category
+	Reference string `json:"reference,omitempty"`  // bank/end-to-end reference
 }
 
 // IsExpense reports whether the transaction moves money out of the account.
