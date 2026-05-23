@@ -7,8 +7,8 @@ import (
 	"github.com/SciTee/ledgerly/internal/parse"
 )
 
-// readOptions builds the CSV reader options implied by the profile.
-func (p *Profile) readOptions() parse.ReadOptions {
+// ReadOptions builds the CSV reader options implied by the profile.
+func (p *Profile) ReadOptions() parse.ReadOptions {
 	opts := parse.ReadOptions{SkipRows: p.SkipRows}
 	if d, ok := p.delimiterRune(); ok {
 		opts.Delimiter = d
