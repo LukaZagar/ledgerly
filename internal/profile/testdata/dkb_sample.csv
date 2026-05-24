@@ -1,0 +1,8 @@
+"Kontonummer:";"DE00 0000 0000 0000 0000 00"
+"Zeitraum:";"01.02.2026 - 28.02.2026"
+"Kontostand am 28.02.2026:";"1.234,56 EUR"
+""
+"Buchungstag";"Wertstellung";"Buchungstext";"Auftraggeber / Begünstigter";"Verwendungszweck";"Betrag (EUR)"
+"03.02.2026";"03.02.2026";"Lastschrift";"ALDI SUED";"Einkauf Lebensmittel";"-27,84"
+"10.02.2026";"10.02.2026";"Lohn/Gehalt";"ACME AG";"Gehalt Februar 2026";"2.980,00"
+"14.02.2026";"15.02.2026";"Kartenzahlung";"Shell";"Tanken";"-55,10"
