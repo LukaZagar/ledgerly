@@ -1,0 +1,17 @@
+name: Sparkasse
+delimiter: ";"
+decimal: comma
+currency: EUR
+date_layouts:
+  - "02.01.06"
+  - "02.01.2006"
+signature:
+  - Auftragskonto
+  - Beguenstigter/Zahlungspflichtiger
+  - Verwendungszweck
+columns:
+  date: Buchungstag
+  value_date: Valutadatum
+  amount: Betrag
+  payee: Beguenstigter/Zahlungspflichtiger
+  purpose: Verwendungszweck

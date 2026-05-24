@@ -1,0 +1,4 @@
+Auftragskonto;Buchungstag;Valutadatum;Buchungstext;Beguenstigter/Zahlungspflichtiger;Verwendungszweck;Betrag;Waehrung
+DE12500105170648489890;05.02.26;05.02.26;Lastschrift;REWE Markt GmbH;Einkauf;-34,21;EUR
+DE12500105170648489890;06.02.26;06.02.26;Dauerauftrag;Hausverwaltung Meier;Miete Februar;-780,00;EUR
+DE12500105170648489890;28.02.26;28.02.26;Gutschrift;Lohnstelle Stadt;Gehalt Februar;2.510,55;EUR

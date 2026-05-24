@@ -19,6 +19,7 @@ func TestBuiltinProfilesGolden(t *testing.T) {
 		golden  string
 	}{
 		{"DKB", "dkb_sample.csv", "dkb.json"},
+		{"Sparkasse", "sparkasse_sample.csv", "sparkasse.json"},
 	}
 
 	for _, c := range cases {
