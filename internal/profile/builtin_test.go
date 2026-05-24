@@ -20,6 +20,7 @@ func TestBuiltinProfilesGolden(t *testing.T) {
 	}{
 		{"DKB", "dkb_sample.csv", "dkb.json"},
 		{"Sparkasse", "sparkasse_sample.csv", "sparkasse.json"},
+		{"PayPal", "paypal_sample.csv", "paypal.json"},
 	}
 
 	for _, c := range cases {
