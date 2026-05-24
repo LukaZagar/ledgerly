@@ -107,7 +107,8 @@ ledgerly convert --profile DKB --rules my-rules.yaml statement.csv
 A rule matches a case-insensitive substring (`match`) or a regular expression
 (`regex`) against the `payee`, `purpose`, or both (`field: any`, the default).
 Anything no rule matches is left as `Uncategorized`. Pass `--no-categorize` to
-skip the step entirely.
+skip the step entirely. The full rule reference is in
+[docs/rules.md](docs/rules.md).
 
 ## Output format
 
