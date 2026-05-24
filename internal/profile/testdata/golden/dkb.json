@@ -1,0 +1,32 @@
+[
+  {
+    "date": "2026-02-03",
+    "value_date": "2026-02-03",
+    "amount": -2784,
+    "currency": "EUR",
+    "payee": "ALDI SUED",
+    "purpose": "Einkauf Lebensmittel",
+    "account": "DKB",
+    "category": ""
+  },
+  {
+    "date": "2026-02-10",
+    "value_date": "2026-02-10",
+    "amount": 298000,
+    "currency": "EUR",
+    "payee": "ACME AG",
+    "purpose": "Gehalt Februar 2026",
+    "account": "DKB",
+    "category": ""
+  },
+  {
+    "date": "2026-02-14",
+    "value_date": "2026-02-15",
+    "amount": -5510,
+    "currency": "EUR",
+    "payee": "Shell",
+    "purpose": "Tanken",
+    "account": "DKB",
+    "category": ""
+  }
+]

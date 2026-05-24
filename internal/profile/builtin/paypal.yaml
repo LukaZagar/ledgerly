@@ -1,0 +1,15 @@
+name: PayPal
+delimiter: ","
+decimal: comma
+currency: EUR
+date_layouts:
+  - "02.01.2006"
+signature:
+  - Brutto
+  - Netto
+  - Typ
+columns:
+  date: Datum
+  amount: Netto
+  payee: Name
+  purpose: Typ

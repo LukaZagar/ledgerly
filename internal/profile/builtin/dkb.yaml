@@ -1,0 +1,18 @@
+name: DKB
+delimiter: ";"
+decimal: comma
+currency: EUR
+# DKB exports print a few account-info lines above the real header.
+skip_rows: 4
+date_layouts:
+  - "02.01.2006"
+signature:
+  - Buchungstag
+  - "Auftraggeber / Begünstigter"
+  - "Betrag (EUR)"
+columns:
+  date: Buchungstag
+  value_date: Wertstellung
+  amount: "Betrag (EUR)"
+  payee: "Auftraggeber / Begünstigter"
+  purpose: Verwendungszweck

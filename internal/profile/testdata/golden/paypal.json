@@ -1,0 +1,32 @@
+[
+  {
+    "date": "2026-02-03",
+    "value_date": null,
+    "amount": -999,
+    "currency": "EUR",
+    "payee": "Spotify AB",
+    "purpose": "Abbuchung",
+    "account": "PayPal",
+    "category": ""
+  },
+  {
+    "date": "2026-02-08",
+    "value_date": null,
+    "amount": 4880,
+    "currency": "EUR",
+    "payee": "Max Mustermann",
+    "purpose": "Geld erhalten",
+    "account": "PayPal",
+    "category": ""
+  },
+  {
+    "date": "2026-02-12",
+    "value_date": null,
+    "amount": -7995,
+    "currency": "EUR",
+    "payee": "Zalando SE",
+    "purpose": "Zahlung",
+    "account": "PayPal",
+    "category": ""
+  }
+]

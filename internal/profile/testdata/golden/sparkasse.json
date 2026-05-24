@@ -1,0 +1,32 @@
+[
+  {
+    "date": "2026-02-05",
+    "value_date": "2026-02-05",
+    "amount": -3421,
+    "currency": "EUR",
+    "payee": "REWE Markt GmbH",
+    "purpose": "Einkauf",
+    "account": "Sparkasse",
+    "category": ""
+  },
+  {
+    "date": "2026-02-06",
+    "value_date": "2026-02-06",
+    "amount": -78000,
+    "currency": "EUR",
+    "payee": "Hausverwaltung Meier",
+    "purpose": "Miete Februar",
+    "account": "Sparkasse",
+    "category": ""
+  },
+  {
+    "date": "2026-02-28",
+    "value_date": "2026-02-28",
+    "amount": 251055,
+    "currency": "EUR",
+    "payee": "Lohnstelle Stadt",
+    "purpose": "Gehalt Februar",
+    "account": "Sparkasse",
+    "category": ""
+  }
+]
