@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/SciTee/ledgerly/internal/model"
+	"github.com/LukaZagar/ledgerly/internal/model"
 )
 
 // DedupFiles removes transactions that a later input file re-exports from an

@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/SciTee/ledgerly/internal/parse"
+	"github.com/LukaZagar/ledgerly/internal/parse"
 )
 
 const messyHeaderCSV = "\xef\xbb\xbf Buchung ; Betrag ;Verwendungszweck\n" +

@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/SciTee/ledgerly/internal/model"
+	"github.com/LukaZagar/ledgerly/internal/model"
 )
 
 func txns() []model.Transaction {

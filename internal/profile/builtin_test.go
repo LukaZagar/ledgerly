@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/SciTee/ledgerly/internal/parse"
+	"github.com/LukaZagar/ledgerly/internal/parse"
 )
 
 // TestBuiltinProfilesGolden applies each built-in profile to its sample export

@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/SciTee/ledgerly/internal/parse"
+	"github.com/LukaZagar/ledgerly/internal/parse"
 )
 
 // update regenerates the golden files: go test ./... -update

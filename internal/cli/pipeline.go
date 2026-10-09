@@ -6,11 +6,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/SciTee/ledgerly/internal/categorize"
-	"github.com/SciTee/ledgerly/internal/merge"
-	"github.com/SciTee/ledgerly/internal/model"
-	"github.com/SciTee/ledgerly/internal/parse"
-	"github.com/SciTee/ledgerly/internal/profile"
+	"github.com/LukaZagar/ledgerly/internal/categorize"
+	"github.com/LukaZagar/ledgerly/internal/merge"
+	"github.com/LukaZagar/ledgerly/internal/model"
+	"github.com/LukaZagar/ledgerly/internal/parse"
+	"github.com/LukaZagar/ledgerly/internal/profile"
 )
 
 // pipelineOptions configures how input files are turned into a timeline.

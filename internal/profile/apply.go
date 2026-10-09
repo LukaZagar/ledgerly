@@ -3,8 +3,8 @@ package profile
 import (
 	"fmt"
 
-	"github.com/SciTee/ledgerly/internal/model"
-	"github.com/SciTee/ledgerly/internal/parse"
+	"github.com/LukaZagar/ledgerly/internal/model"
+	"github.com/LukaZagar/ledgerly/internal/parse"
 )
 
 // ReadOptions builds the CSV reader options implied by the profile.

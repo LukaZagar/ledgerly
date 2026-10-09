@@ -4,7 +4,7 @@ package main
 import (
 	"os"
 
-	"github.com/SciTee/ledgerly/internal/cli"
+	"github.com/LukaZagar/ledgerly/internal/cli"
 )
 
 // version is overridden at build time via -ldflags "-X main.version=...".

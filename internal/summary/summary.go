@@ -7,7 +7,7 @@ import (
 	"io"
 	"sort"
 
-	"github.com/SciTee/ledgerly/internal/model"
+	"github.com/LukaZagar/ledgerly/internal/model"
 )
 
 // Bucket is a labelled total with a transaction count.

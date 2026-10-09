@@ -8,7 +8,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/SciTee/ledgerly/internal/parse"
+	"github.com/LukaZagar/ledgerly/internal/parse"
 	"gopkg.in/yaml.v3"
 )
 

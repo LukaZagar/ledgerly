@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"io"
 
-	"github.com/SciTee/ledgerly/internal/model"
+	"github.com/LukaZagar/ledgerly/internal/model"
 )
 
 // jsonTx is the user-facing JSON shape. It deliberately differs from the

@@ -5,7 +5,7 @@ import (
 	"encoding/csv"
 	"io"
 
-	"github.com/SciTee/ledgerly/internal/model"
+	"github.com/LukaZagar/ledgerly/internal/model"
 )
 
 // csvHeader is the fixed column order of the unified CSV output.

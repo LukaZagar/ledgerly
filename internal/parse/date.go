@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/SciTee/ledgerly/internal/model"
+	"github.com/LukaZagar/ledgerly/internal/model"
 )
 
 // DefaultDateLayouts are tried, in order, when a profile does not pin down its

@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/SciTee/ledgerly/internal/model"
+	"github.com/LukaZagar/ledgerly/internal/model"
 )
 
 func tx(payee, purpose string) model.Transaction {

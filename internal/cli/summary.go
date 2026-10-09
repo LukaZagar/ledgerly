@@ -1,7 +1,7 @@
 package cli
 
 import (
-	"github.com/SciTee/ledgerly/internal/summary"
+	"github.com/LukaZagar/ledgerly/internal/summary"
 	"github.com/spf13/cobra"
 )
 

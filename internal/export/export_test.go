@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/SciTee/ledgerly/internal/model"
+	"github.com/LukaZagar/ledgerly/internal/model"
 )
 
 var update = flag.Bool("update", false, "update golden files")

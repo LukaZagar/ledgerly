@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/SciTee/ledgerly/internal/model"
-	"github.com/SciTee/ledgerly/internal/parse"
+	"github.com/LukaZagar/ledgerly/internal/model"
+	"github.com/LukaZagar/ledgerly/internal/parse"
 )
 
 // mapRow turns a single CSV row into a Transaction.

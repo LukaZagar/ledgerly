@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"text/tabwriter"
 
-	"github.com/SciTee/ledgerly/internal/profile"
+	"github.com/LukaZagar/ledgerly/internal/profile"
 	"github.com/spf13/cobra"
 )
 

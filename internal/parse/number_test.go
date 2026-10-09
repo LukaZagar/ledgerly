@@ -3,7 +3,7 @@ package parse
 import (
 	"testing"
 
-	"github.com/SciTee/ledgerly/internal/model"
+	"github.com/LukaZagar/ledgerly/internal/model"
 )
 
 func TestParseAmountAuto(t *testing.T) {

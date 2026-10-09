@@ -5,10 +5,10 @@ import (
 	"io"
 	"os"
 
-	"github.com/SciTee/ledgerly/internal/export"
-	"github.com/SciTee/ledgerly/internal/model"
-	"github.com/SciTee/ledgerly/internal/parse"
-	"github.com/SciTee/ledgerly/internal/profile"
+	"github.com/LukaZagar/ledgerly/internal/export"
+	"github.com/LukaZagar/ledgerly/internal/model"
+	"github.com/LukaZagar/ledgerly/internal/parse"
+	"github.com/LukaZagar/ledgerly/internal/profile"
 	"github.com/spf13/cobra"
 )
 

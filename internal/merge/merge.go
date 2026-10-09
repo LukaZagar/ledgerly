@@ -6,7 +6,7 @@ package merge
 import (
 	"sort"
 
-	"github.com/SciTee/ledgerly/internal/model"
+	"github.com/LukaZagar/ledgerly/internal/model"
 )
 
 // Merge concatenates one or more transaction slices and returns them sorted

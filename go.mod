@@ -1,4 +1,4 @@
-module github.com/SciTee/ledgerly
+module github.com/LukaZagar/ledgerly
 
 go 1.22
 

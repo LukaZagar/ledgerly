@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/SciTee/ledgerly/internal/model"
+	"github.com/LukaZagar/ledgerly/internal/model"
 )
 
 func TestParseDateDefaults(t *testing.T) {

@@ -8,7 +8,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/SciTee/ledgerly/internal/model"
+	"github.com/LukaZagar/ledgerly/internal/model"
 	"gopkg.in/yaml.v3"
 )
 
